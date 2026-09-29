@@ -9,6 +9,7 @@
   let current = -1;
   let touchStart = null;
   let exitTimer = null;
+  const transitionDuration = 760;
 
   function indexFromHash() {
     const match = location.hash.match(/slide-(\d+)/);
@@ -25,7 +26,7 @@
     if (exitTimer) window.clearTimeout(exitTimer);
 
     slides.forEach((slide, i) => {
-      slide.classList.remove('is-active', 'is-exiting', 'exit-next', 'exit-prev', 'enter-next', 'enter-prev');
+      slide.classList.remove('is-active', 'is-exiting', 'exit-next', 'exit-prev', 'enter-next', 'enter-prev', 'is-intro');
       slide.inert = i !== target;
       slide.setAttribute('aria-hidden', String(i !== target));
     });
@@ -36,7 +37,10 @@
       exitTimer = window.setTimeout(() => {
         slides[previous].classList.remove('is-exiting', 'exit-next', 'exit-prev');
         slides[target].classList.remove('enter-next', 'enter-prev');
-      }, 600);
+      }, transitionDuration);
+    } else if (!reducedMotion.matches && previous < 0) {
+      slides[target].classList.add('is-active', 'is-intro');
+      exitTimer = window.setTimeout(() => slides[target].classList.remove('is-intro'), transitionDuration);
     } else {
       slides[target].classList.add('is-active');
     }

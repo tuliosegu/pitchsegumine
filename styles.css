@@ -12,8 +12,8 @@
   --copper: #c98862;
   --sans: "Manrope", "Avenir Next", system-ui, sans-serif;
   --mono: "DM Mono", "SFMono-Regular", Consolas, monospace;
-  --side: clamp(24px, 6.2vw, 104px);
-  --top: clamp(26px, 4.6vh, 48px);
+  --side: max(clamp(24px, 6.2vw, 104px), calc(12px + env(safe-area-inset-left, 0px)), calc(12px + env(safe-area-inset-right, 0px)));
+  --top: max(clamp(26px, 4.6vh, 48px), calc(12px + env(safe-area-inset-top, 0px)));
 }
 
 * { box-sizing: border-box; }
@@ -58,7 +58,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--mint); outline-
 @keyframes data-row-arrive { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
 
 .topline { position: absolute; left: 0; right: 0; top: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--mint-deep) 24%, var(--mint) 64%, rgba(156,229,211,.12)); }
-.slide-head { position: relative; z-index: 3; display: flex; align-items: center; justify-content: space-between; height: 36px; }
+.slide-head { position: relative; z-index: 3; display: flex; align-items: center; justify-content: space-between; height: 36px; padding-right: env(safe-area-inset-right, 0px); }
 .brand { color: var(--ink); font-size: 15px; font-weight: 700; letter-spacing: .12em; }
 .brand span { color: var(--mint); }
 .meta, .screen-kicker { font-family: var(--mono); text-transform: uppercase; letter-spacing: .1em; }
@@ -193,20 +193,21 @@ h1 span, h2 span { color: var(--mint); }
 .cta.full { width: 100%; margin-top: 22px; }
 
 /* Persistent deck controls occupy their own band. */
-.deck-nav { position: fixed; right: 22px; bottom: 15px; z-index: 50; display: flex; align-items: center; gap: 10px; }
+.deck-nav { position: fixed; right: calc(22px + env(safe-area-inset-right, 0px)); bottom: calc(15px + env(safe-area-inset-bottom, 0px)); z-index: 50; display: flex; align-items: center; gap: 10px; }
 .nav-arrow, .fullscreen { display: grid; width: 38px; height: 38px; place-items: center; border: 1px solid rgba(156,229,211,.28); border-radius: 4px; background: rgba(9,19,17,.82); color: #dce8e1; cursor: pointer; font-size: 17px; transition: background .18s ease, border-color .18s ease, color .18s ease; }
 .nav-arrow:hover, .fullscreen:hover { border-color: var(--mint); background: rgba(85,174,157,.15); color: var(--mint); }
 .nav-arrow:disabled { opacity: .35; cursor: default; }
 .counter { min-width: 60px; color: #c6d4cc; font-family: var(--mono); font-size: 12px; text-align: center; letter-spacing: .08em; }
 .counter .sep { padding: 0 4px; color: var(--faint); }
-.dots { position: fixed; bottom: 29px; left: 22px; z-index: 50; display: flex; gap: 7px; }
+.dots { position: fixed; bottom: calc(29px + env(safe-area-inset-bottom, 0px)); left: calc(22px + env(safe-area-inset-left, 0px)); z-index: 50; display: flex; gap: 7px; }
 .dot { width: 8px; height: 8px; border: 0; border-radius: 50%; padding: 0; background: #50675e; cursor: pointer; transform-origin: center; transition: transform .2s ease, background .2s ease; }
 .dot.active { transform: scaleX(2); border-radius: 5px; background: var(--mint); }
-.fullscreen { position: fixed; top: 18px; right: 22px; z-index: 50; font-size: 16px; }
+.fullscreen { position: fixed; top: calc(18px + env(safe-area-inset-top, 0px)); right: calc(22px + env(safe-area-inset-right, 0px)); z-index: 50; font-size: 16px; }
 
 @media (max-width: 900px) and (min-width: 641px) {
-  :root { --side: clamp(28px,5vw,48px); }
+  :root { --side: max(clamp(28px,5vw,48px), calc(12px + env(safe-area-inset-left, 0px)), calc(12px + env(safe-area-inset-right, 0px))); }
   .slide { padding-bottom: 86px; }
+  .slide-head { padding-right: calc(48px + env(safe-area-inset-right, 0px)); }
   .split-title { grid-template-columns: minmax(0,.78fr) minmax(0,1.22fr); gap: 24px; }
   .layer-row { grid-template-columns: 29px minmax(0,1fr); gap: 9px; min-height: 80px; }
   .layer-state { display: none; }
@@ -215,16 +216,20 @@ h1 span, h2 span { color: var(--mint); }
   .revenue-stack article { padding: 11px; }
 }
 
-@media (max-width: 640px), (orientation: portrait) and (max-width: 900px) {
-  :root { --side: 23px; --top: 24px; }
+@media (max-width: 640px), (orientation: portrait) and (max-width: 900px), (max-height: 560px) and (max-width: 1000px) {
+  :root {
+    --side: max(23px, calc(12px + env(safe-area-inset-left, 0px)), calc(12px + env(safe-area-inset-right, 0px)));
+    --top: max(24px, calc(12px + env(safe-area-inset-top, 0px)));
+  }
   html, body { height: 100%; }
   #viewport { overflow: hidden; }
   #stage { overflow: hidden; }
-  .slide { inset: 0 0 52px; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; padding: var(--top) var(--side) 28px; }
-  .slide-head { height: 32px; padding-right: 48px; }
+  .slide { inset: 0 0 calc(62px + env(safe-area-inset-bottom, 0px)); overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; padding: var(--top) var(--side) 28px; }
+  .slide-head { height: 32px; padding-right: calc(48px + env(safe-area-inset-right, 0px)); }
   .brand { font-size: 13px; }
   .meta { max-width: 48%; font-size: 12px; text-align: right; }
-  .slide-foot { display: none; }
+  .slide-foot { position: relative; inset: auto; display: flex; margin-top: 24px; font-size: 12px; letter-spacing: .025em; }
+  .slide-foot span:last-child { display: none; }
   h1 { max-width: 540px; font-size: clamp(39px, 10.2vw, 57px); }
   h2 { font-size: clamp(33px, 8.4vw, 47px); }
   .lede { margin-top: 18px; font-size: 14px; }
@@ -278,13 +283,13 @@ h1 span, h2 span { color: var(--mint); }
   .investor-card { padding: 22px; }
   .investor-card h3 { font-size: 30px; }
   .investor-card p { font-size: 12px; }
-  .deck-nav { right: 12px; bottom: 11px; gap: 6px; }
-  .nav-arrow, .fullscreen { width: 35px; height: 35px; }
+  .deck-nav { right: calc(12px + env(safe-area-inset-right, 0px)); bottom: calc(11px + env(safe-area-inset-bottom, 0px)); gap: 6px; }
+  .nav-arrow, .fullscreen { width: 44px; height: 44px; }
   .counter { min-width: 50px; font-size: 12px; }
-  .dots { bottom: 26px; left: 12px; gap: 5px; }
+  .dots { bottom: calc(26px + env(safe-area-inset-bottom, 0px)); left: calc(12px + env(safe-area-inset-left, 0px)); gap: 5px; }
   .dot { width: 7px; height: 7px; }
   .dot.active { transform: scaleX(1.7); }
-  .fullscreen { top: 12px; right: 12px; }
+  .fullscreen { top: calc(12px + env(safe-area-inset-top, 0px)); right: calc(12px + env(safe-area-inset-right, 0px)); }
 }
 
 @media (prefers-reduced-motion: reduce) {

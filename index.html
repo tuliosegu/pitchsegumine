@@ -6,33 +6,39 @@
   <meta name="theme-color" content="#0b1d1a" />
   <meta name="description" content="SEGUMINE — apresentação para investidores. Infraestrutura de inteligência mineral B2B." />
   <title>SEGUMINE — Inteligência Mineral B2B</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main id="viewport" aria-live="polite">
+  <main id="viewport" aria-live="off">
     <div id="stage">
       <section class="slide slide-dark is-active" data-slide="1" aria-label="Slide 1 — Tese">
         <div class="topline"></div>
         <header class="slide-head">
           <div class="brand">SEGU<span>MINE</span></div>
-          <div class="meta">APRESENTAÇÃO PARA INVESTIDORES · 2026</div>
+          <div class="meta">APRESENTAÇÃO · AGROVALE · 2026</div>
         </header>
         <div class="hero-grid">
           <div class="hero-copy">
             <div class="eyebrow">UMA BASE MINERAL COMPARTILHADA</div>
             <h1>O Brasil conhece o título.<br><span>Falta conhecer o ativo.</span></h1>
-            <p class="lede">A SEGUMINE organiza processos ANM, pesquisas minerais, documentos técnicos, mapas e evidências de campo em um único registro por ativo — para quem origina, avalia e financia mineração.</p>
-            <div class="hero-tags">
-              <span>Processos</span><span>Mapa</span><span>Histórico</span><span>Monitoramento</span><span>Pesquisa técnica</span>
+            <p class="lede">A base atual reúne processos minerários e suas movimentações. A próxima camada conecta pesquisa mineral, documentos técnicos, mapas e evidências de campo ao contexto de cada ativo.</p>
+            <div class="hero-tags" aria-label="Dados já reunidos pela plataforma">
+              <span>Processos ANM</span><span>Movimentações</span><span>Monitoramento</span>
             </div>
-            <a class="cta" href="https://mine.segu.net.br/app" target="_blank" rel="noopener">Abrir plataforma ao vivo <span>↗</span></a>
+            <div class="hero-actions">
+              <a class="cta" href="https://mine.segu.net.br/app" target="_blank" rel="noopener">Abrir aplicativo <span>↗</span></a>
+              <a class="text-link" href="https://mine.segu.net.br" target="_blank" rel="noopener">Conhecer a plataforma <span>↗</span></a>
+            </div>
           </div>
           <div class="hero-visual">
             <div class="screen-card screen-card-main">
               <div class="screen-kicker">PLATAFORMA ATUAL · TELA REAL</div>
               <img src="assets/mapa.webp" alt="Tela real da SEGUMINE com mapa e processos minerários" />
             </div>
-            <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div>
+            <div class="map-coordinate" aria-hidden="true"><span>BR · DADOS MINERAIS</span><i>−15.78 / −47.92</i></div>
           </div>
         </div>
         <footer class="slide-foot"><span>SEGUMINE</span><span>TESE B2B · INTELIGÊNCIA MINERAL</span></footer>
@@ -47,17 +53,17 @@
         </div>
         <div class="cards three problem-cards">
           <article class="card">
-            <div class="num">01</div>
+            <div class="num">01 <span>FONTES</span></div>
             <h3>Fontes separadas</h3>
             <p>Processos, mapas, documentos e atualizações aparecem em fontes, formatos e rotinas diferentes.</p>
           </article>
           <article class="card">
-            <div class="num">02</div>
+            <div class="num">02 <span>EVIDÊNCIAS</span></div>
             <h3>Pesquisa técnica dispersa</h3>
             <p>Relatórios, sondagens, amostras, mapas e laudos raramente estão conectados ao mesmo ativo.</p>
           </article>
           <article class="card">
-            <div class="num">03</div>
+            <div class="num">03 <span>ANÁLISE</span></div>
             <h3>A análise recomeça</h3>
             <p>Equipes especializadas voltam a buscar, conferir e remontar um histórico que deveria ser reutilizável.</p>
           </article>
@@ -75,22 +81,23 @@
             <h2>Um ativo mineral.<br><span>Um registro estruturado.</span></h2>
             <p class="lede compact">Cada informação mantém origem, data, localização e vínculo com o ativo. A equipe volta ao mesmo contexto — em vez de reconstruí-lo.</p>
           </div>
-          <div class="asset-map" aria-label="Camadas de informação de um ativo mineral">
-            <div class="asset-center"><small>REGISTRO</small><strong>ATIVO<br>MINERAL</strong></div>
-            <div class="asset-node n1">Processo ANM</div>
-            <div class="asset-node n2">Pesquisa mineral</div>
-            <div class="asset-node n3">Relatórios & laudos</div>
-            <div class="asset-node n4">Sondagens & amostras</div>
-            <div class="asset-node n5">Mapas & camadas</div>
-            <div class="asset-node n6">Infra & logística</div>
-            <div class="asset-node n7">Ambiental & restrições</div>
-            <div class="asset-node n8">Campo & validação</div>
-            <svg class="asset-lines" viewBox="0 0 620 460" aria-hidden="true">
-              <g fill="none" stroke="rgba(113,208,199,.34)" stroke-width="1.5">
-                <path d="M310 230 L130 85"/><path d="M310 230 L310 60"/><path d="M310 230 L500 90"/><path d="M310 230 L535 225"/>
-                <path d="M310 230 L500 380"/><path d="M310 230 L310 405"/><path d="M310 230 L125 380"/><path d="M310 230 L80 225"/>
-              </g>
-            </svg>
+          <div class="asset-layers" aria-label="Evolução dos dados ligados a um ativo mineral">
+            <div class="layer-row layer-live">
+              <div class="layer-index">01</div><div><small>EM OPERAÇÃO</small><strong>Processo minerário</strong><p>Polígono, fase, titular e situação</p></div><span class="layer-state">BASE ATUAL</span>
+            </div>
+            <div class="layer-connector"><span></span></div>
+            <div class="layer-row layer-live">
+              <div class="layer-index">02</div><div><small>EM OPERAÇÃO</small><strong>Histórico de movimentações</strong><p>Eventos oficiais vinculados ao processo</p></div><span class="layer-state">RASTREÁVEL</span>
+            </div>
+            <div class="layer-connector"><span></span></div>
+            <div class="layer-row layer-next">
+              <div class="layer-index">03</div><div><small>PRÓXIMA ETAPA</small><strong>Pesquisa e evidência técnica</strong><p>Relatórios, sondagens, amostras e mapas</p></div><span class="layer-state">A ESTRUTURAR</span>
+            </div>
+            <div class="layer-connector"><span></span></div>
+            <div class="layer-row layer-next">
+              <div class="layer-index">04</div><div><small>CONTEXTO DO ATIVO</small><strong>Camadas de superfície e subsolo</strong><p>Informação documentada, fonte e cobertura</p></div><span class="layer-state">EVOLUÇÃO</span>
+            </div>
+            <div class="layer-footnote">Pesquisa documentada não equivale a recurso ou reserva mineral comprovados.</div>
           </div>
         </div>
         <footer class="slide-foot"><span>SEGUMINE</span><span>NÃO É SÓ MAPA · É CONTEXTO TÉCNICO REUTILIZÁVEL</span></footer>
@@ -101,14 +108,14 @@
         <header class="slide-head"><div class="brand">SEGU<span>MINE</span></div><div class="meta">03 · MOTOR DE DADOS</div></header>
         <div class="slide4-grid">
           <div>
-            <div class="eyebrow">DA FONTE BRUTA À INTELIGÊNCIA</div>
+            <div class="eyebrow">DA FONTE BRUTA AO CONTEXTO CONFIÁVEL</div>
             <h2>Construir a base<br><span>é o produto.</span></h2>
             <div class="pipeline">
-              <div class="pipe"><b>01</b><strong>Coletar</strong><small>dados públicos, documentos e uploads</small></div>
-              <div class="pipe"><b>02</b><strong>Extrair</strong><small>texto, coordenadas, datas e entidades</small></div>
-              <div class="pipe"><b>03</b><strong>Normalizar</strong><small>taxonomia, identificadores e geometria</small></div>
-              <div class="pipe"><b>04</b><strong>Relacionar</strong><small>ligar cada evidência ao ativo correto</small></div>
-              <div class="pipe"><b>05</b><strong>Validar</strong><small>origem, atualização e consistência</small></div>
+              <div class="pipe"><b>01</b><strong>Coletar</strong><small>fontes públicas, documentos e novas coletas</small></div>
+              <div class="pipe"><b>02</b><strong>Extrair</strong><small>datas, coordenadas e conteúdo técnico</small></div>
+              <div class="pipe"><b>03</b><strong>Normalizar</strong><small>nomes, identificadores e geometrias</small></div>
+              <div class="pipe"><b>04</b><strong>Relacionar</strong><small>cada evidência ao ativo mineral</small></div>
+              <div class="pipe"><b>05</b><strong>Rastrear</strong><small>origem, data, cobertura e validação</small></div>
             </div>
             <div class="data-cloud"><span>SEGUMINE DATA CLOUD</span><strong>ativo · região · substância · histórico · evidências · contexto</strong></div>
           </div>
@@ -126,15 +133,15 @@
         <header class="slide-head"><div class="brand">SEGU<span>MINE</span></div><div class="meta">04 · MODELO B2B</div></header>
         <div class="b2b-grid">
           <div class="workspace-preview">
-            <div class="eyebrow">WORKSPACE ATUAL</div>
-            <h2>Uma base.<br><span>Várias formas de monetização.</span></h2>
+            <div class="eyebrow">MÚLTIPLAS FORMAS DE ENTREGA</div>
+            <h2>Uma base.<br><span>Vários usos B2B.</span></h2>
             <div class="screen-card"><img src="assets/carteira.webp" alt="Tela real da carteira de processos monitorados da SEGUMINE" /></div>
           </div>
           <div class="revenue-stack">
-            <article><span>01</span><div><h3>Workspace B2B</h3><p>Mapa, busca, carteiras, monitoramento, alertas e colaboração.</p></div></article>
-            <article><span>02</span><div><h3>API / Data License</h3><p>Dados estruturados para análises, sistemas internos e modelos próprios.</p></div></article>
-            <article><span>03</span><div><h3>Data Room Mineral</h3><p>Dossiê técnico por ativo, projeto ou carteira, com origem e histórico.</p></div></article>
-            <article><span>04</span><div><h3>Inteligência & Originação</h3><p>Screening, relatórios, comparações e identificação de oportunidades.</p></div></article>
+            <article><span>01</span><div><h3>Workspace B2B <i>EM OPERAÇÃO</i></h3><p>Mapa, busca, carteiras, monitoramento e alertas.</p></div></article>
+            <article><span>02</span><div><h3>API / licença de dados <i>A VALIDAR</i></h3><p>Dados estruturados para análises e sistemas internos.</p></div></article>
+            <article><span>03</span><div><h3>Dossiê por ativo <i>PRÓXIMA ETAPA</i></h3><p>Pesquisa e documentos com origem e histórico.</p></div></article>
+            <article><span>04</span><div><h3>Inteligência & originação <i>A VALIDAR</i></h3><p>Relatórios, comparações e identificação de oportunidades.</p></div></article>
           </div>
         </div>
         <div class="customer-strip"><span>MINERADORAS</span><span>FUNDOS</span><span>CONSULTORIAS</span><span>BANCOS / CRÉDITO</span><span>SEGUROS</span></div>
@@ -149,10 +156,10 @@
           <h2>Não precisamos mapear o Brasil inteiro<br><span>para provar valor.</span></h2>
         </div>
         <div class="steps four">
-          <article><b>01</b><h3>Escolher</h3><p>Recorte com dor real, densidade de informação e valor comercial.</p></article>
-          <article><b>02</b><h3>Estruturar</h3><p>Lote piloto de ativos com dossiê, fontes e histórico mínimo confiável.</p></article>
-          <article><b>03</b><h3>Validar</h3><p>Pilotos B2B com equipes que usam a base em análise e acompanhamento reais.</p></article>
-          <article><b>04</b><h3>Expandir</h3><p>Novas regiões, substâncias e fontes somente após evidência de uso e valor.</p></article>
+          <article><b>01</b><h3>Escolher</h3><p>Recorte de ativos relevante para a análise da Agrovale.</p></article>
+          <article><b>02</b><h3>Estruturar</h3><p>Fontes, histórico e evidências técnicas disponíveis.</p></article>
+          <article><b>03</b><h3>Testar</h3><p>Aplicar a base ao fluxo real de avaliação e acompanhamento.</p></article>
+          <article><b>04</b><h3>Medir</h3><p>Tempo de análise, cobertura de informação e recorrência de uso.</p></article>
         </div>
         <div class="metrics-row">
           <div><span>TEMPO</span><strong>para estruturar um ativo</strong></div>
@@ -169,20 +176,20 @@
         <div class="closing-grid">
           <div>
             <div class="eyebrow">O QUE QUEREMOS COMPROVAR</div>
-            <h2>O próximo marco é<br><span>virar rotina.</span></h2>
-            <p class="lede compact">Transformar a plataforma atual em uma infraestrutura de dados minerais usada de forma recorrente por empresas.</p>
+            <h2>O próximo marco é<br><span>provar valor em campo.</span></h2>
+            <p class="lede compact">Definir um primeiro recorte de ativos e validar como a inteligência mineral pode apoiar a análise e o acompanhamento.</p>
             <div class="closing-points">
-              <div><b>01</b><span><strong>Fortalecer a base</strong>Relacionar ativos, fontes, documentos e histórico com origem rastreável.</span></div>
-              <div><b>02</b><span><strong>Executar pilotos</strong>Medir redução de trabalho manual, qualidade percebida e retorno ao produto.</span></div>
-              <div><b>03</b><span><strong>Validar o modelo</strong>Comprovar disposição a pagar, renovação e expansão dentro das equipes.</span></div>
+              <div><b>01</b><span><strong>Escolher o recorte</strong>Ativos, regiões ou substâncias relevantes para a análise.</span></div>
+              <div><b>02</b><span><strong>Montar o dossiê</strong>Conectar processo, eventos e pesquisa técnica disponível.</span></div>
+              <div><b>03</b><span><strong>Avaliar o uso</strong>Identificar cobertura, lacunas e valor no fluxo de decisão.</span></div>
             </div>
           </div>
           <aside class="investor-card">
-            <div class="screen-kicker">TESE DE INVESTIMENTO</div>
-            <h3>De mapa de processos<br>para infraestrutura de dados minerais.</h3>
-            <p>A vantagem não está em possuir dados públicos. Está em construir uma operação que transforme fontes dispersas em contexto confiável, atualizado e reutilizável por ativo.</p>
-            <div class="proof-list"><span>uso recorrente</span><span>base proprietária crescente</span><span>múltiplas receitas B2B</span></div>
-            <a class="cta full" href="https://mine.segu.net.br/app" target="_blank" rel="noopener">Ver produto atual <span>↗</span></a>
+            <div class="screen-kicker">CONVERSA COM A AGROVALE</div>
+            <h3>Da leitura do título<br>à inteligência do ativo.</h3>
+            <p>A camada atual reúne processos e movimentações. O próximo passo é conectar pesquisa técnica e evidências rastreáveis ao contexto de cada ativo.</p>
+            <div class="proof-list"><span>processos + histórico</span><span>pesquisa técnica</span><span>piloto por recorte</span></div>
+            <a class="cta full" href="https://mine.segu.net.br" target="_blank" rel="noopener">Conhecer a plataforma <span>↗</span></a>
           </aside>
         </div>
         <footer class="slide-foot"><span>SEGUMINE</span><span>BRASIL · INTELIGÊNCIA MINERAL B2B</span></footer>
@@ -192,7 +199,7 @@
 
   <nav class="deck-nav" aria-label="Navegação da apresentação">
     <button class="nav-arrow" id="prev" type="button" aria-label="Slide anterior">←</button>
-    <div class="counter"><span id="current">01</span><span class="sep">/</span><span>07</span></div>
+    <div class="counter" aria-live="polite" aria-atomic="true"><span id="current">01</span><span class="sep">/</span><span>07</span></div>
     <button class="nav-arrow" id="next" type="button" aria-label="Próximo slide">→</button>
   </nav>
   <div class="dots" id="dots" aria-label="Ir para slide"></div>
